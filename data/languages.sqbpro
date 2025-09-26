@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="languages.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="774"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="lang_db" custom_title="0" dock_id="1" table="4,7:mainlang_db"/><dock_state state="000000ff00000000fd0000000100000002000001c30000021ffc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000001c30000010d00ffffff000001c30000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="lang_db" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="42"/><column index="2" value="114"/><column index="3" value="68"/><column index="4" value="237"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">INSERT OR IGNORE INTO lang_db (code, name, romanize, prompt) VALUES
+('ru', 'Russian', 1, 'Return passport-style of romanization.'),
+('th', 'Thai', 1, 'Royal Thai General System of Transcription style of romanization.'),
+('it', 'Italian', 0, ''),
+('ro', 'Romanian', 0, ''),
+('hi', 'Hindi', 1, 'Return International Alphabet of Sanskrit Transliteration style of romanization.'),
+('ar', 'Arabic', 1, 'Return ALA-LC style of romanization.'),
+('bn', 'Bengali', 1, 'Return IAST/ISO 15919 style of romanization.'),
+('tl', 'Tagalog', 0, ''),
+('pt', 'Portuguese', 0, ''),
+('de', 'German', 0, ''),
+('uk', 'Ukrainian', 1, 'Return ISO 9 style of romanization.');</sql><current_tab id="0"/></tab_sql></sqlb_project>

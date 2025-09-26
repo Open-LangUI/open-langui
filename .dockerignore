@@ -1,0 +1,11 @@
+node_modules
+.svelte-kit
+.vscode
+.git
+.gitignore
+npm-debug.log*
+Dockerfile
+README.md
+*.log
+data
+untitled folder

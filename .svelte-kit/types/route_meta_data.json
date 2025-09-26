@@ -1,0 +1,20 @@
+{
+	"/": [
+		"src/routes/+page.server.ts"
+	],
+	"/api/connections": [
+		"src/routes/api/connections/+server.ts"
+	],
+	"/api/languages/add-custom": [
+		"src/routes/api/languages/add-custom/+server.ts"
+	],
+	"/api/languages/addable": [
+		"src/routes/api/languages/addable/+server.ts"
+	],
+	"/api/languages/add/[code]": [
+		"src/routes/api/languages/add/[code]/+server.ts"
+	],
+	"/api/languages/[code]": [
+		"src/routes/api/languages/[code]/+server.ts"
+	]
+}

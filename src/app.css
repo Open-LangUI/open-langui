@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes tilt-shake {
+    0%, 100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  .animate-tilt-shake {
+    animation: tilt-shake 0.4s ease-in-out infinite;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-x: none;
+  }
+}
