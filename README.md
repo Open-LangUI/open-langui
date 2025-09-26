@@ -21,10 +21,10 @@ docker run -d -p 3333:3000 --name open-langui open-langui
 ```
 
 ## ⚙️ Configuration
-You can set these in the Preferences panel inside the app:
+1. Enable CORS on LM Studio API.
+2. Configure Preferences panel inside the app:
 - **Base URL** (default: `http://localhost:1234`) For best results, use the IP assigned to your server.
 - **API Key** (optional)
-- **Temperature** (controls randomness, default `0.2`)
 
 ## 📜 License
 MIT License – feel free to use and modify.
