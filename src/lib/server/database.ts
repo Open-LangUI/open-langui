@@ -76,7 +76,7 @@ const connectionCount = db.prepare('SELECT COUNT(*) AS count FROM connections').
 
 if (!connectionCount || connectionCount.count === 0) {
   db.prepare('INSERT INTO connections (id, base_url, api_key, temperature) VALUES (1, ?, ?, ?)').run(
-    'http://localhost:1234',
+    'http://localhost:1235/api',
     '',
     0.2
   );
