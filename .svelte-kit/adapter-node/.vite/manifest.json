@@ -131,7 +131,7 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.C9istnCN.css"
+      "_app/immutable/assets/_layout.bpS8CgJU.css"
     ]
   },
   "src/routes/+page.server.ts": {
@@ -201,6 +201,15 @@
     "isEntry": true,
     "imports": [
       "_database.js"
+    ]
+  },
+  "src/routes/api/proxy/[...path]/+server.ts": {
+    "file": "entries/endpoints/api/proxy/_...path_/_server.ts.js",
+    "name": "entries/endpoints/api/proxy/_...path_/_server.ts",
+    "src": "src/routes/api/proxy/[...path]/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_connections.js"
     ]
   }
 }

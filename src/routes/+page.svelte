@@ -39,12 +39,10 @@
     modelsLoading = true;
     modelsError = "";
     try {
-      const res = await fetch(`${baseUrl}/v1/models`, {
-        headers: {
-          "Content-Type": "application/json",
-          ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {})
-        }
-      });
+      const res = await fetch(`/api/proxy/v1/models`);
+      if (!res.ok) {
+        throw new Error(`Model request failed: ${res.status}`);
+      }
       const json = await res.json();
       /** @type {any[]} */
       const rawList = extractModelEntries(json);
@@ -155,8 +153,6 @@
   <!-- Main -->
   <main class="flex-1 max-w-7xl mx-auto p-6 w-full">
     <TranslatorWorkspace
-      {baseUrl}
-      {apiKey}
       {model}
       {temperature}
       {languages}

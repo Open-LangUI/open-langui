@@ -90,8 +90,6 @@ function HeaderBar($$renderer, $$props) {
 }
 function TranslatorWorkspace($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
-    let baseUrl = fallback($$props["baseUrl"], "http://localhost:1234");
-    let apiKey = fallback($$props["apiKey"], "");
     let model = fallback($$props["model"], "");
     let temperature = fallback($$props["temperature"], 0.2);
     let languages = fallback($$props["languages"], () => [], true);
@@ -170,12 +168,9 @@ function TranslatorWorkspace($$renderer, $$props) {
       try {
         const targetMeta = languages.find((l) => l.code === targetLang);
         const romanizeClause = targetMeta?.romanize ? targetMeta.prompt || `Also include a 'romanization' string that reflects the pronunciation of the translated output text (never the source text).` : "Do not include romanization.";
-        const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+        const response = await fetch(`/api/proxy/v1/chat/completions`, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            ...apiKey ? { Authorization: `Bearer ${apiKey}` } : {}
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             model,
             temperature,
@@ -367,15 +362,7 @@ Text: ${inputText}`
       $$renderer2.push("<!--[!-->");
     }
     $$renderer2.push(`<!--]--></div>`);
-    bind_props($$props, {
-      baseUrl,
-      apiKey,
-      model,
-      temperature,
-      languages,
-      defaultSource,
-      defaultTarget
-    });
+    bind_props($$props, { model, temperature, languages, defaultSource, defaultTarget });
   });
 }
 function SplashScreen($$renderer, $$props) {
@@ -399,8 +386,8 @@ function _page($$renderer, $$props) {
     let languages = data.languages;
     let defaultSource = data.defaultSource;
     let defaultTarget = data.defaultTarget;
-    let baseUrl = data.connections.base_url;
-    let apiKey = data.connections.api_key;
+    data.connections.base_url;
+    data.connections.api_key;
     let model = "";
     let temperature = data.connections.temperature ?? 0.2;
     let models = [];
@@ -413,8 +400,8 @@ function _page($$renderer, $$props) {
     languages = data.languages;
     defaultSource = data.defaultSource;
     defaultTarget = data.defaultTarget;
-    baseUrl = data.connections.base_url;
-    apiKey = data.connections.api_key;
+    data.connections.base_url;
+    data.connections.api_key;
     temperature = data.connections.temperature ?? 0.2;
     let $$settled = true;
     let $$inner_renderer;
@@ -436,15 +423,7 @@ function _page($$renderer, $$props) {
         }
       });
       $$renderer3.push(`<!----> <main class="flex-1 max-w-7xl mx-auto p-6 w-full">`);
-      TranslatorWorkspace($$renderer3, {
-        baseUrl,
-        apiKey,
-        model,
-        temperature,
-        languages,
-        defaultSource,
-        defaultTarget
-      });
+      TranslatorWorkspace($$renderer3, { model, temperature, languages, defaultSource, defaultTarget });
       $$renderer3.push(`<!----></main> `);
       {
         $$renderer3.push("<!--[!-->");

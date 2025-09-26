@@ -3,8 +3,6 @@
   import { browser } from "$app/environment";
   import MobileLanguageSelector from "$lib/components/MobileLanguageSelector.svelte";
 
-  export let baseUrl = "http://localhost:1234";
-  export let apiKey = "";
   export let model = "";
   export let temperature = 0.2;
   export let languages = [];
@@ -201,11 +199,10 @@
         ? (targetMeta.prompt || `Also include a 'romanization' string that reflects the pronunciation of the translated output text (never the source text).`)
         : "Do not include romanization.";
 
-      const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+      const response = await fetch(`/api/proxy/v1/chat/completions`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {})
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           model,

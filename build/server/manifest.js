@@ -10,11 +10,11 @@ return {
 	assets: new Set([".DS_Store","apple-touch-icon-precomposed.png","apple-touch-icon.png","favicon.ico","favicon.png","images/.DS_Store","images/openlang.svg","images/preferences.svg","images/slash.svg","robots.txt"]),
 	mimeTypes: {".png":"image/png",".svg":"image/svg+xml",".txt":"text/plain"},
 	_: {
-		client: {start:"_app/immutable/entry/start.CQLNxFNa.js",app:"_app/immutable/entry/app.BhQed9qS.js",imports:["_app/immutable/entry/start.CQLNxFNa.js","_app/immutable/chunks/CKgdIqQA.js","_app/immutable/chunks/DcF3xoQD.js","_app/immutable/chunks/DJ8JGTRo.js","_app/immutable/entry/app.BhQed9qS.js","_app/immutable/chunks/DJ8JGTRo.js","_app/immutable/chunks/DcF3xoQD.js","_app/immutable/chunks/DsnmJJEf.js","_app/immutable/chunks/F2tdbd6K.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.Bc4qWPyv.js",app:"_app/immutable/entry/app.Qs1x-aw7.js",imports:["_app/immutable/entry/start.Bc4qWPyv.js","_app/immutable/chunks/YZs77HQT.js","_app/immutable/chunks/DcF3xoQD.js","_app/immutable/chunks/DJ8JGTRo.js","_app/immutable/entry/app.Qs1x-aw7.js","_app/immutable/chunks/DJ8JGTRo.js","_app/immutable/chunks/DcF3xoQD.js","_app/immutable/chunks/DsnmJJEf.js","_app/immutable/chunks/F2tdbd6K.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
-			__memo(() => import('./chunks/0-CZpxxqVj.js')),
-			__memo(() => import('./chunks/1-9wUXmZAZ.js')),
-			__memo(() => import('./chunks/2-DXbhS-xI.js'))
+			__memo(() => import('./chunks/0-DXHDpObO.js')),
+			__memo(() => import('./chunks/1-CA6YG27X.js')),
+			__memo(() => import('./chunks/2-C6T4OfrC.js'))
 		],
 		remotes: {
 			
@@ -61,6 +61,13 @@ return {
 				params: [{"name":"code","optional":false,"rest":false,"chained":false}],
 				page: null,
 				endpoint: __memo(() => import('./chunks/_server.ts-DuKbhPwc.js'))
+			},
+			{
+				id: "/api/proxy/[...path]",
+				pattern: /^\/api\/proxy(?:\/([^]*))?\/?$/,
+				params: [{"name":"path","optional":false,"rest":true,"chained":true}],
+				page: null,
+				endpoint: __memo(() => import('./chunks/_server.ts-D6ejMjTK.js'))
 			}
 		],
 		prerendered_routes: new Set([]),

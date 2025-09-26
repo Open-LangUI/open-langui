@@ -16,5 +16,8 @@
 	],
 	"/api/languages/[code]": [
 		"src/routes/api/languages/[code]/+server.ts"
+	],
+	"/api/proxy/[...path]": [
+		"src/routes/api/proxy/[...path]/+server.ts"
 	]
 }
