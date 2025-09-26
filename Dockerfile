@@ -2,28 +2,30 @@
 
 FROM node:22-alpine AS base
 WORKDIR /app
-ENV NODE_ENV=production
 
-# Install dependencies
+# Install all dependencies (including devDependencies for build)
 FROM base AS deps
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Build the app
+# Build app (needs devDependencies)
 FROM deps AS build
 COPY . .
 RUN npm run build
 
-# Runtime image
-FROM base AS runner
+# Runtime: only production deps
+FROM node:22-alpine AS runner
 WORKDIR /app
+
+ENV NODE_ENV=production
+
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
-# Copy build output
+# Copy build artifacts from build stage
 COPY --from=build /app/build ./build
 
-# Ensure SQLite data folder exists
+# SQLite data dir
 RUN mkdir -p /app/data
 
 ENV HOST=0.0.0.0
