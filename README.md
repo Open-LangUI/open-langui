@@ -17,7 +17,11 @@ You can also run the app inside Docker:
 git clone https://github.com/open-langui/open-langui.git && \
 cd open-langui && \
 docker build -t open-langui . && \
-docker run -d -p 3333:3000 --name open-langui open-langui
+docker run -d \
+  -p 3333:3000 \
+  -v $(pwd)/data:/app/data \
+  --name open-langui \
+  open-langui
 ```
 
 ## ⚙️ Configuration
