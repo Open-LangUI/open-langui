@@ -1,4 +1,4 @@
-# LM Studio Translator 🌐
+# Open LangUI Translator 🌐
 
 A simple, self-hosted web app built with **Svelte + TailwindCSS** that connects to **LM Studio’s API** to translate text between multiple languages.  
 
